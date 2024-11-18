@@ -10,7 +10,10 @@ const books = [
 	{ id: 3, title: "Book 3", author: "Author 3" },
 ];
 
-app.get("/", (req, res) => res.send("Hello World!"));
+// using "get" method
+app.get("/books", (req, res) => {
+	res.json(books);
+});
 
 const port = 8080;
 
