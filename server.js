@@ -24,6 +24,19 @@ app.post("/books", (req, res) => {
 	res.status(201).json(newBook);
 });
 
+// using "put" method
+app.put("/books/:id", (req, res) => {
+	const id = parseInt(req.params.id);
+	const updatedBook = req.body;
+	const index = books.findIndex((book) => book.id === id);
+	if (index === -1) {
+		res.status(404).json({ error: "book not found" });
+	} else {
+		books[index] = { ...books[index], ...updatedBook };
+		res.json(books[index]);
+	}
+});
+
 const port = 8080;
 
 app.listen(port, () =>
