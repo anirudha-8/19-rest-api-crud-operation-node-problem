@@ -37,6 +37,18 @@ app.put("/books/:id", (req, res) => {
 	}
 });
 
+// using "delete" method
+app.delete("/books/:id", (req, res) => {
+	const id = parseInt(req.params.id);
+	const index = books.findIndex((book) => book.id === id);
+	if (index === -1) res.status(404).json({ error: "book not found" });
+	else {
+		const deletedBook = books[index];
+		books.splice(index, 1);
+		res.json(deletedBook);
+	}
+});
+
 const port = 8080;
 
 app.listen(port, () =>
