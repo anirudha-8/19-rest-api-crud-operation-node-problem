@@ -9,6 +9,12 @@ const books = [
 	{ id: 3, title: "Book 3", author: "Author 3" },
 ];
 
+/* ============= METHODS =============  */
+// C = POST
+// R = GET
+// U = PUT
+// D = DELETE
+
 // using "get" method
 app.get("/books", (req, res) => {
 	res.json(books);
