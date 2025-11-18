@@ -34,7 +34,7 @@ The API should expose the following endpoints:
 The project folder should have the following structure:
 
 ```bash
-problem-19-crud-api/
+19-rest-api-crud-operation-node-problem/
 ├── server.js         # Main server file
 ├── README.md         # Documentation for this problem
 └── package.json      # Project configuration file
